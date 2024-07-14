@@ -1,21 +1,30 @@
-//need to update the code 
+//need to update the code
 import 'dart:io';
-
-class word_list_try_list_details
+class Words_try
 {
-  List<String> list_of_words;
-  int trail_num;
-  word_list_try_list_details(this.trail_num): list_of_words =List.filled(6, "")
+  Map<int,String?> wordstry;
+  Words_try():wordstry= {};
+  //words appending to dictionary
+  void add_words(int try_num_,String? word)
   {
-    
+    wordstry[try_num_]=word;
   }
+  void print_dictionary()
+  {
+    wordstry.forEach((key,value)
+    {
+      print(" At trail $key the word is $value");
+    });
+  }
+  
 }
 
 void main()
 {
   var trail_num=1;
-  final correct_word="BHARATH";
+  final correct_word="BHARATH";//for testing
   var is_matched=false;
+  Words_try my_try=Words_try();
   while (!is_matched)
   {
     print("Enter your word $trail_num : ");
@@ -27,6 +36,7 @@ void main()
     }
     else
     {
+      my_try.add_words(trail_num, word);
       if(word==correct_word)
       {
         print("Correct Word !");
@@ -43,4 +53,5 @@ void main()
       }
     }
   }
+  my_try.print_dictionary();
 }
