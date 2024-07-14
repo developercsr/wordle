@@ -31,11 +31,13 @@ void main()
     String? word=stdin.readLineSync();
     if (word=="")
     {
-      print("Please Enter Something : ");
+      //here it will be a return statement to the ui such that please enter some thing here
+      print("Please Enter Something !");
       continue;
     }
     else
     {
+      //storing the object in the local storage
       my_try.add_words(trail_num, word);
       if(word==correct_word)
       {
@@ -54,4 +56,5 @@ void main()
     }
   }
   my_try.print_dictionary();
+  //sending the object to the server
 }

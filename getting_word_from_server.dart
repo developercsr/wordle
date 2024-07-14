@@ -20,6 +20,7 @@ class word_details
 }
 void main()
 {
+  //here the object wil be readed from the server and stores the answer of the word in the app local storage
   var file = File(r"C:\Users\suman\Desktop\Sanscrit wordlee\wordle\server_sending_word.json");
   var content=file.readAsStringSync();
   final Map<String,dynamic> Jsondata=jsonDecode(content);
@@ -29,5 +30,5 @@ void main()
   var date=Jsondata["date"];
   var word_hint=Jsondata["word_hint"];
   var image_hint=Jsondata["image_hint"];
-  word_details wword=word_details(length: length, word: word, word_hint: word_hint);
+  word_details wword=word_details(length: length,date:date, word: word, word_hint: word_hint,image_hint: image_hint);
 }
